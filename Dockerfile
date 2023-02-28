@@ -34,7 +34,7 @@ RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
-# Instalar o Node.js e o NPM
+# Install Node.js and NPM
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
     && apt-get install -y nodejs
 
@@ -49,5 +49,5 @@ USER $user
 # Rewrite a docker-php-entrypoint
 COPY build/entrypoint.sh /usr/local/bin/docker-php-entrypoint
 
-# Instalar as dependências do NPM
+# Instalall NPM dependencies
 RUN npm install
